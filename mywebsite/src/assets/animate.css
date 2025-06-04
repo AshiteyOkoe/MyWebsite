@@ -1,0 +1,43 @@
+/* animate.css - Custom Animations for Docel-Star */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fade In */
+.animate-fade-in {
+  animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade In Down */
+.animate-fade-in-down {
+  animation: fadeInDown 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade In Up */
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bounce In Right */
+.animate-bounce-in-right {
+  animation: bounceInRight 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+@keyframes bounceInRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  60% { opacity: 1; transform: translateX(-10px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
