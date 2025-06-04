@@ -49,7 +49,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   // Navbar hide/show on scroll
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollY = useRef(window.scrollY);
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -243,7 +243,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                       }}
                     >
                       <div className="grid grid-cols-2 gap-3" role="menu">
-                        {productCategories.map((cat, idx) => (
+                        {productCategories.map((cat) => (
                           <Link
                             key={cat.path}
                             href={cat.path}
@@ -498,8 +498,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="Scroll to top"
-        className="fixed bottom-24 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors duration-400 focus:outline-none focus:ring-2 focus:ring-blue-400 animate__animated animate__bounceInRight animate__slow md:bottom-8 md:right-8"
-        style={{ display: 'block' }}
+        className="fixed bottom-24 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors duration-400 focus:outline-none focus:ring-2 focus:ring-blue-400 animate__animated animate__bounceInRight animate__slow md:bottom-8 md:right-8 scroll-to-top-btn"
       >
         <Icon icon="mdi:arrow-up" className="w-7 h-7" />
       </button>
